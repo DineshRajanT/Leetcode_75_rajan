@@ -35,7 +35,7 @@ class Solution:
                     else:
                         high = mid
                 ans_arr[low] = nums[i]
-
+        print(ans_arr)
         return len(ans_arr)
 
        
