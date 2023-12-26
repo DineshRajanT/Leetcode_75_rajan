@@ -1,20 +1,43 @@
+## Approach 1 :
+    # Complexity
+    # Time complexity: O(N)
+    # Space complexity: O(1)
+
 class Solution:
     def rob(self, nums: List[int]) -> int:
         if not nums:
             return 0
+        rob1, rob2 = 0, 0
+        # [rob1, rob2, n, n+1, n+2, n+3, .......]
+        # so at given index n : it will be either (n + rob1) or rob2
+        for n in nums:
+            temp = max(n + rob1, rob2)
+            rob1 = rob2
+            rob2 = temp
+        return rob2
 
-        dp = [0] * len(nums)
-        dp[0] = nums[0]
-        print(dp) 
-        prevMax = -1
+
+## Approach 2 :
+    # Complexity
+    # Time complexity: O(N)
+    # Space complexity: O(N)
+# class Solution:
+#     def rob(self, nums: List[int]) -> int:
+#         if not nums:
+#             return 0
+
+#         dp = [0] * len(nums)
+#         dp[0] = nums[0]
+#         print(dp) 
+#         prevMax = -1
         
-        for i in range(1, len(nums)):
-            prevMax = max(prevMax, dp[i-2])
-            print(f"prevMax at {i}:",prevMax)
-            dp[i] = nums[i] + prevMax
+#         for i in range(1, len(nums)):
+#             prevMax = max(prevMax, dp[i-2])
+#             print(f"prevMax at {i}:",prevMax)
+#             dp[i] = nums[i] + prevMax
 
-        print(dp)
-        return max(dp)
+#         print(dp)
+#         return max(dp)
         
 # Approach
 # 1.) Initialization:
@@ -47,35 +70,6 @@ class Solution:
 # For the third house, prevMax becomes 2 (maximum between 2 and 0), and dp[2] is updated to 9 + 9 = 18.
 
 # This process continues, and at the end, max(dp) gives the maximum amount of money that can be robbed, which is 12 in this case.
-
-# Complexity
-# Time complexity: O(N)
-# Space complexity: O(N)
-
-
-
-
-
-
-
-
-
-
-
-        # firstPt = 0
-        # secondPt = 0
-
-        # if len(nums)<=2:
-        #     return max(nums) 
-
-        # for i in range(0,len(nums), 2):  
-        #     firstPt += nums[i]
-
-        #     if i!= len(nums)-1:
-        #         secondPt += nums[i+1]
-        
-        #     print(firstPt, secondPt)
-        # return max(firstPt, secondPt)
 
 
 
