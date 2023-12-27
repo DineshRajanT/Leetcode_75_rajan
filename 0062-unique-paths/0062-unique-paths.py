@@ -24,15 +24,17 @@ class Solution:
                     dp_mat[i][j] = dp_mat[i][j+1] + dp_mat[i+1][j]
                 
         
-        ## PRINT
-        # for i in range(m):
-        #     for j in range(n):
-        #         print(dp_mat[i][j], end=" ")
-        #     print("")
+        # PRINT
+#         for i in range(m):
+#             for j in range(n):
+#                 print(dp_mat[i][j], end=" ")
+#             print("")
             
         return dp_mat[0][0]
 
-        
+#         10 6 3 1 
+#         4 3 2 1 
+#         1 1 1 1 
         '''
         This dynamic programming approach efficiently calculates the number of unique paths by filling in the matrix with the cumulative sum of paths from the bottom-right corner to the top-left corner. The final result is obtained from dp_mat[0][0].
         '''
