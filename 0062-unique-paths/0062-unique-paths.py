@@ -9,12 +9,10 @@ class Solution:
         #dp_mat = [[0] * cols for i in range(rows)]
 
         #Two nested loops iterate over each cell in reverse order. 
+        for i in reversed(range(m-1)): # one row less since these are 1's 
+            for j in reversed(range(n-1)): # one column less since these are 1's
 
-        
-        for i in reversed(range(m-1)):
-            for j in reversed(range(n-1)):
-
-                # Otherwise, update dp_mat[i][j] with the sum of the values to the right (dp_mat[i][j+1]) and below (dp_mat[i+1][j]).
+                # Update dp_mat[i][j] with the sum of the values to the right (dp_mat[i][j+1]) and below (dp_mat[i+1][j]).
                 dp_mat[i][j] = dp_mat[i][j+1] + dp_mat[i+1][j]
                 
         
@@ -34,8 +32,6 @@ class Solution:
         '''
         
         
-        
-
 
 # class Solution:
 #     def uniquePaths(self, m: int, n: int) -> int:
