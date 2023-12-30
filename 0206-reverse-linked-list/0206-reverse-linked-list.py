@@ -4,7 +4,7 @@
 #         self.val = val
 #         self.next = next
 
-##### LOOP SOLUTION
+##### ITERATIVE SOLUTION.......
 
 # class Solution:
 #     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
@@ -18,13 +18,13 @@
 #             currNode = nextNode
 #         return prevNode # New head
       
-#### RECURSIVE SOLUTION
+#### RECURSIVE SOLUTION.......
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
         prev = None
         curr = head
-        
+        # First change the link b/w curr and prev and then call the same for subsequent nodes.
         def reverse(curr, prev):
             if curr is None:
                 return prev
