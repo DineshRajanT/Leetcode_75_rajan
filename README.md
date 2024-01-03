@@ -1,4 +1,4 @@
-# Leetcode_75_rajan
+# Leetcode 75
 
 * Collection of LeetCode questions to ace the coding interview! - Created using Leetcode must to 75 problems.
   
