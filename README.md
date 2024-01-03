@@ -1,2 +1,3 @@
 # Leetcode_75_rajan
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub v2](https://github.com/arunbhardwaj/LeetHub-2.0)
+Collection of LeetCode questions to ace the coding interview! - Created using Leetcode must to 75 problems
+Also contains few Dailty Challenge problems from LC (Dec - Jan 24)
