@@ -14,14 +14,14 @@ class Solution:
             # Check if the current subsequence forms an arithmetic slice
             if (nums[i] - nums[i-1]) == (nums[i-1] - nums[i-2]):
                 # If true, update the current count and add it to the total count
-                curr = prev + 1
-                totalSum += curr
+                prev = prev + 1
+                
             else:
                 # If not, reset the current count to 0
-                curr = 0
+                prev = 0
             
             # Update the previous count for the next iteration
-            prev = curr
+            totalSum += prev
 
         # Return the total count of arithmetic slices
         return totalSum
