@@ -7,6 +7,7 @@ class Solution:
         for val in nums:
             counts[val] = counts.get(val,0)+1
 
+
         for k,v in counts.items():
             if v > 1:
                 dups = k
