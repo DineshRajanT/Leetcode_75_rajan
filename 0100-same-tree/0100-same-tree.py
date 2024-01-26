@@ -6,6 +6,21 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        
+        if p is None and q is None:
+            return True 
+
+        if p and q and p.val == q.val:
+            return (self.isSameTree(p.left, q.left) and
+                    self.isSameTree(p.right, q.right))
+
+        return False
+
+    
+
+
+
+        '''
 
         def preOrderTraversal(node, sequence):
             if node is None:
@@ -22,6 +37,8 @@ class Solution:
         print(seq2)
         # check if the the preorder traversal is same for both the trees
         return seq1 == seq2
+
+        '''
             
 
         
