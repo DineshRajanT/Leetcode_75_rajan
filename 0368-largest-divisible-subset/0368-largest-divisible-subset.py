@@ -8,9 +8,6 @@ class Solution:
         maxLen = 0
         maxLenIndex = 0
 
-        # If there is only one element, it's the largest divisible subset
-        if len(nums) == 1:
-            return nums
         # Sort the input array for efficient traversal
         nums.sort()
 
