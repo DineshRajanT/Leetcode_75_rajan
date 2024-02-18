@@ -5,9 +5,9 @@ from collections import defaultdict
 class Solution:
     def mostBooked(self, n: int, meetings: List[List[int]]) -> int:
         # Use defaultdict to track the number of bookings for each room
-        booked = defaultdict(int)
+        booked = defaultdict(int) # (room_id : no.of.times occupied)
 
-        # Comparator function for PriorityQueue
+        # Comparator function for PriorityQueue, return the smallest here actually
         def compare(a, b):
             if a[0] == b[0]:
                 return a[1] > b[1]
@@ -15,10 +15,10 @@ class Solution:
                 return a[0] > b[0]
 
         # PriorityQueue to store meetings based on their end time
-        pq = PriorityQueue()
+        pq = PriorityQueue() # (end_time, room_id)
 
         # PriorityQueue to store available rooms
-        free_rooms = PriorityQueue()
+        free_rooms = PriorityQueue() #(room_id) indicating free rooms
 
         # Initialize available rooms
         for i in range(n):
@@ -32,6 +32,7 @@ class Solution:
             start, end = v[0], v[1]
 
             # Process finished meetings, free up rooms
+            # while some rooms are occupied, and the room with least end time < start
             while not pq.empty() and pq.queue[0][0] <= start:
                 free_rooms.put(pq.get()[1])
 
